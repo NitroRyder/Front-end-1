@@ -1,48 +1,46 @@
 pipeline {
     agent any
-    tools{
+    tools {
         nodejs 'nodejs_jenkins_20'
     }
-    stages{
-        stage("Build JAR File"){
-            steps{
-                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/NitroRyder/TingesoEntrega1']])
-                dir('front-end'){
-                    bat 'mvn clean package'
+    stages {
+        stage("Checkout") {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Install npm dependencies') {
+            steps {
+                dir('front-end') {
+                    bat 'npm install'
                 }
             }
         }
 
-        stage('Install npm dependencies'){
-            steps{
-                dir('front-end'){
-                    bat 'npm run install'
-                }
-            }
-        }
-
-        stage('Run npm dependencies'){
-            step{
-                dir('front-end'){
+        stage('Run npm build') {
+            steps {
+                dir('front-end') {
                     bat 'npm run build'
                 }
             }
         }
 
-        stage('Build docker image'){
-            steps{
-                dir('front-end'){
+        stage('Build docker image') {
+            steps {
+                dir('front-end') {
                     bat 'docker build -t nitroryder/front-end:latest .'
                 }
             }
         }
-        stage('Push image to Docker Hub'){
-            steps{
-                dir('front-end'){
-                   withCredentials([string(credentialsId: 'dkrhubpassword', variable: 'dhpsw')]) {
+
+        stage('Push image to Docker Hub') {
+            steps {
+                dir('front-end') {
+                    withCredentials([string(credentialsId: 'dkrhubpassword', variable: 'dhpsw')]) {
                         bat 'docker login -u nitroryder -p %dhpsw%'
-                   }
-                   bat 'docker push nitroryder/front-end:latest'
+                    }
+                    bat 'docker push nitroryder/front-end:latest'
                 }
             }
         }
