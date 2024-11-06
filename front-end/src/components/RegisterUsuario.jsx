@@ -185,9 +185,9 @@ function RegisterUsuario() {
       {/*---------------------------------------------------------------------------------------------*/}        
         <div className="mb-3">
           <label className="form-label">Nombre:</label>
-          <input type="text" className="form-control" name="name" value={usuario.name} onChange={handleChange} placeholder="Ejemplo: Elsa Payo" required />
+          <input type="text" className="form-control" name="name" value={usuario.name} onChange={handleChange} placeholder="Ejemplo: Pere Gil" required />
           <small className="form-text text-muted">
-            Ingrese el nombre y apellido, separados por un espacio. Ej: Elsa Payo.
+            Ingrese el nombre y apellido, separados por un espacio. Ej: Pere Gil.
           </small>
         </div>
       {/*---------------------------------------------------------------------------------------------*/}
