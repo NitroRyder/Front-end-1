@@ -201,7 +201,7 @@ function RegisterUsuario() {
       {/*---------------------------------------------------------------------------------------------*/}        
         <div className="mb-3">
           <label className="form-label">Años de Trabajo:</label>
-          <input type="number" className="form-control" name="workage" value={usuario.workage} onChange={handleChange} placeholder="Ejemplo: 30" required />
+          <input type="number" className="form-control" name="workage" value={usuario.workage} onChange={handleChange} placeholder="Ejemplo: 3" required />
           <small className="form-text text-muted">
             Ingrese los años que lleva empleado en su trabajo mas reciente. Ej: 3 años.
           </small>
