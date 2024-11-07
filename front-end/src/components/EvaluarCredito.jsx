@@ -98,7 +98,7 @@ const handleSubmit = async (e) => {
         </div>
       {/*---------------------------------------------------------------------------------------------*/}
         <div className="d-grid gap-2">
-        <button type="submit" className="btn btn-primary btn-lg">Realizar Evaluación de la solicitud</button>
+        <button type="submit" className="btn btn-primary btn-lg">Realizar Evaluación</button>
         </div>
       </form>
       {/*---------------------------------------------------------------------------------------------*/}
