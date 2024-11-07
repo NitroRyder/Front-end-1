@@ -53,7 +53,7 @@ const VerNotificaciones = () => {
         </div>
       {/*---------------------------------------------------------------------------------------------*/}
         <div className="d-grid gap-2">
-          <button type="submit" className="btn btn-primary btn-lg">Realizar Seguimiento</button>
+          <button type="submit" className="btn btn-primary btn-lg">Ver Notificaciones</button>
         </div>
       </form>
       {/*---------------------------------------------------------------------------------------------*/}
