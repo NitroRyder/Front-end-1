@@ -25,7 +25,7 @@ function ClientHome() {
             className="btn btn-secondary btn-lg w-100" 
             onClick={() => navigate('/credito/simular')}
           >
-            Simular Crédito
+            Simular Cuota de Pago
           </button>
         </div>
         {/*---------------------------------------------------------------------------------------------*/}
